@@ -1,0 +1,37 @@
+#ssoServiceUrl: https://cmsso.zra.org.zm/auth
+#ssoServiceUrl: https://172.17.2.55:7001/auth
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        #name: JSESSIONID
+        max-age: 3600
+      timeout: 15m
+    context-path: /wirepick
+  error:
+    whitelabel:
+      enabled: false
+#security:
+#  oauth2:
+#    client:
+#      clientId: R2dpxQ3vPrtfgF72
+#      clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
+#      accessTokenUri: ${ssoServiceUrl}/oauth/token
+#      userAuthorizationUri: ${ssoServiceUrl}/oauth/authorize
+#    resource:
+#      user-info-uri: ${ssoServiceUrl}/user/me
+
+spring:
+  session:
+    jdbc:
+      #schema: wirepayDirect
+      initialize-schema: never
+    store-type: none
+  web:
+    locale: en_US
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+      #suffix: .html
