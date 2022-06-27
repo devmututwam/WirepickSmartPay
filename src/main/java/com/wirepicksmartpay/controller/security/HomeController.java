@@ -34,12 +34,12 @@ public class HomeController {
      * @param map
      * @return
      */
-    /*@GetMapping(value = "/")
+    @GetMapping(value = "/")
     public ModelAndView showLandingPage(ModelMap map) {
 
 
         return new ModelAndView("landing");
-    }*/
+    }
 
     /**
      * Render the login page

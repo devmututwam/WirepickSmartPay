@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class TestController {
 
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/test")
     public ModelAndView showLandingPage(ModelMap map) {
 
 
