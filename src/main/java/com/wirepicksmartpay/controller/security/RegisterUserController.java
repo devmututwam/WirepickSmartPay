@@ -38,6 +38,7 @@ public class RegisterUserController {
 
 
         return new ModelAndView("security/registerUser");
+        //return new ModelAndView("registerUser");
     }
 
     /**
