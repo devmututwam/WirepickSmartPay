@@ -167,6 +167,8 @@
 
 <!-- Main JS -->
 <script href="<c:url value="/assets/js/main.js" />"/> </script>
+<script src="<c:url value="https://code.jquery.com/jquery-3.5.1.min.js" />"/> </script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!-- Page JS -->
 

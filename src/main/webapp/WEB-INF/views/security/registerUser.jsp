@@ -159,19 +159,19 @@
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
-
 <script href="<c:url value="/assets/vendor/libs/jquery/jquery.js" />"/></script>
 <script href="<c:url value="/assets/vendor/libs/popper/popper.js" />"/></script>
 <script href="<c:url value="/assets/vendor/js/bootstrap.js" />"/></script>
 <script href="<c:url value="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js" />"/></script>
 <script href="<c:url value="/assets/vendor/js/menu.js" />"/></script>
-
 <!-- endbuild -->
 
 <!-- Vendors JS -->
 
 <!-- Main JS -->
 <script href="<c:url value="/assets/js/main.js" />"/> </script>
+<script src="<c:url value="https://code.jquery.com/jquery-3.5.1.min.js" />"/> </script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!-- Page JS -->
 
@@ -180,21 +180,6 @@
 <script type="text/javascript" src="<c:url value="/assets/bower/sweetalert/js/sweetalert.min.js"/>"></script>
 <!-- Custom js -->
 <script type="text/javascript" src="<c:url value="/assets/js/security/registerUser.js" />"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#showPassword').on('click', function (e) {
-            var elem = $('i', '#showPassword');
-            if ($(elem).hasClass('icofont-eye')) {
-                $(elem).removeClass('icofont-eye');
-                $(elem).addClass('icofont-eye-blocked').attr('title', 'Hide Password');
-                $('[name="password"]').attr('type', 'text');
-            } else {
-                $(elem).removeClass('icofont-eye-blocked');
-                $(elem).addClass('icofont-eye').attr('title', 'Show Password');
-                $('[name="password"]').attr('type', 'password');
-            }
-        });
-    });
-</script>
+
 </body>
 </html>
