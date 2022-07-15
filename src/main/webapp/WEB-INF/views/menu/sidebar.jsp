@@ -20,44 +20,29 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-
     <title>Wirepick Smartpay</title>
-
     <meta name="description" content=""/>
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<c:url value="/assets/img/favicon/favicon.ico"/>"/>
-
     <!-- Fonts -->
     <link rel="preconnect" href="<c:url value="https://fonts.googleapis.com"/>"/>
-
     <link rel="preconnect" href="<c:url value="https://fonts.gstatic.com"/>" crossorigin/>
-
-
     <link href="<c:url value="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"/>"
           rel="stylesheet"/>
-
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="<c:url value="/assets/vendor/fonts/boxicons.css"/>"/>
-
     <!-- Core CSS -->
     <link rel="stylesheet" href="<c:url value="/assets/vendor/css/core.css"/>" class="template-customizer-core-css"/>
-
     <link rel="stylesheet" href="<c:url value="/assets/vendor/css/theme-default.css"/>"
           class="template-customizer-theme-css"/>
-
     <link rel="stylesheet" href="<c:url value="/assets/css/demo.css"/>"/>
-
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<c:url value="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"/>"/>
-
     <link rel="stylesheet" href="<c:url value="/assets/vendor/libs/apex-charts/apex-charts.css"/>"/>
-
     <!-- Page CSS -->
-
     <!-- Helpers -->
+    <link rel="stylesheet" type="text/css" href="<c:url value="/assets/bower/sweetalert/css/sweetalert.css" />"/>
     <script src="<c:url value="/assets/vendor/js/helpers.js"/>"></script>
-
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="<c:url value="/assets/js/config.js"/>"></script>
@@ -140,13 +125,18 @@
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
                 <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
+                    <%--<a href="index.html" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
-                    </a>
+                    </a>--%>
+
+                        <%--  ADD MENU INCLUDES --%>
+
+                        <jsp:include page="darshBoardMenu.jsp"/>
+                        <jsp:include page="userTransactionsMenu.jsp"/>
+                        <jsp:include page="accountsMenu.jsp"/>
+
                 </li>
-
-
             </ul>
         </aside>
         <!-- / Menu -->

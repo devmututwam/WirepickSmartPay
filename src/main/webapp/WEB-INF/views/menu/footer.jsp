@@ -64,6 +64,10 @@
 <script src="<c:url value="/assets/js/main.js"/>"></script>
 <script src="<c:url value="/assets/js/dashboards-analytics.js"/>"></script>
 <script src="<c:url value="https://buttons.github.io/buttons.js"/>"></script>
+<script src="<c:url value="https://code.jquery.com/jquery-3.5.1.min.js" />"/> </script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript" src="<c:url value="/assets/bower/sweetalert/js/sweetalert.min.js"/>"></script>
 
 </body>
 </html>
