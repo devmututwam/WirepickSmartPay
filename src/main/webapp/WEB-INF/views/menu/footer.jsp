@@ -12,12 +12,12 @@
             <script>
                 document.write(new Date().getFullYear());
             </script>
-            , made with ❤️ by
-            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+            , SmartPay
+            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">|| @Copyright Wirepick.</a>
         </div>
         <div>
             <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Products</a>
 
             <a
                     href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
@@ -49,14 +49,6 @@
 </div>
 <!-- / Layout wrapper -->
 
-<div class="buy-now">
-    <a
-            href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-            target="_blank"
-            class="btn btn-danger btn-buy-now"
-    >Upgrade to Pro</a
-    >
-</div>
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->

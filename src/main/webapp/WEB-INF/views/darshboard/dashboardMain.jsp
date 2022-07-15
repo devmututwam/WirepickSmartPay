@@ -6,6 +6,9 @@
 
 <jsp:include page="../menu/sidebar.jsp" />
 
+<%--Start of custom page content--%>
+<%----%>
+<%----%>
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
@@ -541,8 +544,12 @@
     </div>
 </div>
 
+<%----%>
+<%----%>
+<%--End of custom page content--%>
+
 
 <jsp:include page="../menu/footer.jsp" />
 
-
+<%--Add your custom JS here--%>
 <script type="text/javascript" src="<c:url value="/assets/js/security/login.js" />"></script>
