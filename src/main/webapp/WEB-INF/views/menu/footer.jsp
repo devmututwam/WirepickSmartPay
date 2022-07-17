@@ -68,6 +68,21 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script type="text/javascript" src="<c:url value="/assets/bower/sweetalert/js/sweetalert.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/js/jquery.quicksearch.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/bower/select2/js/select2.full.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/pages/store-js/moment.js" />"></script>
+<script type="text/javascript" src="<c:url value="/assets/bower/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" />"></script>
+<!-- jquery.datetimepicker -->
+<script type="text/javascript" src="<c:url value="/assets/js/jquery.datetimepicker.js" />"></script>
+<!-- Date-dropper js -->
+<script type="text/javascript" src="<c:url value="/assets/bower/datedropper/js/datedropper.min.js" />"></script>
+<!-- Date-range picker js -->
+<script type="text/javascript" src="<c:url value="/assets/bower/bootstrap-daterangepicker/js/daterangepicker.js" />"></script>
+<!-- Multiselect js -->
+<script type="text/javascript" src="<c:url value="/assets/bower/bootstrap-multiselect/js/bootstrap-multiselect.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/bower/multiselect/js/jquery.multi-select.min.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/bower/bootstrap-multiselect/js/bootstrap-multiselect.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/bower/multiselect/js/jquery.multi-select.js"/>"></script>
 
 </body>
 </html>

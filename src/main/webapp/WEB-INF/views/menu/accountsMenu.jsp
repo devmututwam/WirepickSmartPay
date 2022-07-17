@@ -15,12 +15,12 @@
             </a>
         </li>
         <li class="menu-item">
-            <a class="menu-link" href="<c:url value="/accounts/configureAccounts" />">
+            <a class="menu-link" href="<c:url value="/accounts/viewAccounts" />">
                 <div data-i18n="Without navbar">View Accounts</div>
             </a>
         </li>
         <li class="menu-item">
-            <a class="menu-link" href="<c:url value="/accounts/configureAccounts" />">
+            <a class="menu-link" href="<c:url value="/accounts/accountAmmendments" />">
                 <div data-i18n="Container">Amendments</div>
             </a>
         </li>s

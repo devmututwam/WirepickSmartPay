@@ -24,6 +24,11 @@
     <meta name="description" content=""/>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<c:url value="/assets/img/favicon/favicon.ico"/>"/>
+    <%--  JS  --%>
+    <script src="<c:url value="/assets/vendor/js/helpers.js"/>"></script>
+    <script src="<c:url value="/assets/js/config.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="/assets/pages/store-js/moment.js" />"></script>
+    <%--  JS  --%>
     <!-- Fonts -->
     <link rel="preconnect" href="<c:url value="https://fonts.googleapis.com"/>"/>
     <link rel="preconnect" href="<c:url value="https://fonts.gstatic.com"/>" crossorigin/>
@@ -42,10 +47,11 @@
     <!-- Page CSS -->
     <!-- Helpers -->
     <link rel="stylesheet" type="text/css" href="<c:url value="/assets/bower/sweetalert/css/sweetalert.css" />"/>
-    <script src="<c:url value="/assets/vendor/js/helpers.js"/>"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/assets/bower/jquery.steps/css/jquery.steps.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/bower/select2/css/select2.min.css" />"/>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="<c:url value="/assets/js/config.js"/>"></script>
+
 </head>
 
 <body>

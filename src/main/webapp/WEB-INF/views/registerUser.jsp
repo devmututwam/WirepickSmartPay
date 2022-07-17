@@ -164,14 +164,12 @@
 <script href="<c:url value="/assets/vendor/libs/popper/popper.js"/>"/></script>
 <script href="<c:url value="/assets/vendor/js/bootstrap.js"/>"/></script>
 <script href="<c:url value="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"/>"/></script>
-
 <script href="<c:url value="/assets/vendor/js/menu.js"/>"/></script>
-<!-- endbuild -->
-
-<!-- Vendors JS -->
-
-<!-- Main JS -->
 <script href="<c:url value="/assets/js/main.js"/>"/></script>
+<script src="<c:url value="https://buttons.github.io/buttons.js"/>"></script>
+<script src="<c:url value="https://code.jquery.com/jquery-3.5.1.min.js" />"/> </script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 <script type="text/javascript" src="<c:url value="/assets/bower/sweetalert/js/sweetalert.min.js"/>"></script>
 <!-- Custom js -->
 <script type="text/javascript" src="<c:url value="/assets/js/security/registerUser.js" />"></script>
