@@ -1,0 +1,17 @@
+.toggle-date {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    margin-top: 37px;
+}
+.toggle-date input {
+    width: 20px;
+    height: 20px;
+}
+.spacer {
+    width: 430px;
+}
+.h-scroll {
+    overflow-x: auto;
+}

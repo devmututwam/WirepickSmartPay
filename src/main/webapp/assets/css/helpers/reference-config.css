@@ -1,0 +1,31 @@
+.vs__dropdown-toggle {
+    border: none !important;;
+}
+
+.loader-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.progress-6 {
+    width:120px;
+    height:22px;
+    border-radius: 20px;
+    color:#ffffff;
+    border:2px solid;
+    position: relative;
+}
+.progress-6::before {
+    content:"";
+    position: absolute;
+    margin:2px;
+    inset:0 100% 0 0;
+    border-radius: inherit;
+    background:currentColor;
+    animation:p6 1.5s infinite;
+}
+@keyframes p6 {
+    100% {inset:0}
+}

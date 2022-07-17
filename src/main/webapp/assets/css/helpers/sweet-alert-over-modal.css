@@ -1,0 +1,9 @@
+.swal2-container {
+    z-index: 10000000000;
+}
+.sweet-overlay {
+    z-index: 10000000000;
+}
+.sweet-alert {
+    z-index: 9999900000;
+}

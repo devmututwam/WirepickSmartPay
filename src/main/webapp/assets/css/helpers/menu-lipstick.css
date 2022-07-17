@@ -1,0 +1,22 @@
+#mCSB_1_container {
+    overflow-x: hidden !important;
+}
+
+.vs__actions {
+    transform: scale(0.8);
+}
+
+.slide-enter, .slide-leave-to {
+    opacity: 0;
+    transform: translateX(300px);
+}
+.slide-enter-active, .slide-leave-active {
+    transition: all 0.4s;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: all 0.4s;
+}
