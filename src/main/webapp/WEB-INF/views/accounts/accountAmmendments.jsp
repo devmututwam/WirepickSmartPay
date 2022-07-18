@@ -17,59 +17,60 @@
 
     <%--ADD YOUR CONTENT HERE--%>
 
-    <div class="card-block">
-
-        <form method="post" id="accountAmmendmentsForm" action=""   >
-            <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
-                View your available accounts for possible ammendment
-            </div>
-
-
-            <%--ADD YOUR CONTENT HERE--%>
-
-            <div class="dt-responsive table-responsive">
-                <table id="simpletable" class="table table-hover table-striped table-bordered nowrap">
-                    <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>TPIN</th>
-                        <th>ACC NAME</th>
-                        <th>ACC NO</th>
-                        <th>BANK NAME</th>
-                        <th>BRANCH</th>
-                        <th>BALANCE</th>
-                        <th>STATUS</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <c:if test="${not empty availableAccounts}">
-                        <c:forEach var="account" items="${availableAccounts}" varStatus="counter">
-                            <tr>
-                                <td>${counter.count}.</td>
-                                <td>${account.idNumber}</td>
-                                <td>${account.accountName}</td>
-                                    <%--<td>${account.accountNumber}</td>--%>
-                                <td>
-                                    <a href="accounts/ammendAccount?accountNumber=${account.accountNumber}" class="text-info">${account.accountNumber}</a>
-                                </td>
-                                <td>${account.bankName}</td>
-                                <td>${account.branchName}</td>
-                                <td>${account.accountBalance}</td>
-                                <td>${account.status}</td>
-                            </tr>
-                        </c:forEach>
-                    </c:if>
-
-                    </tbody>
-                </table>
-            </div>
-
-            <%--ADD YOUR CONTENT HERE--%>
+    <div class="card mb-4">
+        <h5 class="card-header">Configure Accounts</h5>
+        <div class="card-body">
+            <form method="post" id="accountAmmendmentsForm" action=""   >
+        <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
+            View your available accounts for possible ammendment
+        </div>
 
 
-        </form>
+        <%--ADD YOUR CONTENT HERE--%>
 
+        <div class="dt-responsive table-responsive">
+            <table id="simpletable" class="table table-hover table-striped table-bordered nowrap">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>TPIN</th>
+                    <th>ACC NAME</th>
+                    <th>ACC NO</th>
+                    <th>BANK NAME</th>
+                    <th>BRANCH</th>
+                    <th>BALANCE</th>
+                    <th>STATUS</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <c:if test="${not empty availableAccounts}">
+                    <c:forEach var="account" items="${availableAccounts}" varStatus="counter">
+                        <tr>
+                            <td>${counter.count}.</td>
+                            <td>${account.idNumber}</td>
+                            <td>${account.accountName}</td>
+                                <%--<td>${account.accountNumber}</td>--%>
+                            <td>
+                                <a href="accounts/ammendAccount?accountNumber=${account.accountNumber}" class="text-info">${account.accountNumber}</a>
+                            </td>
+                            <td>${account.bankName}</td>
+                            <td>${account.branchName}</td>
+                            <td>${account.accountBalance}</td>
+                            <td>${account.status}</td>
+                        </tr>
+                    </c:forEach>
+                </c:if>
+
+                </tbody>
+            </table>
+        </div>
+
+        <%--ADD YOUR CONTENT HERE--%>
+
+
+    </form>
+        </div>
     </div>
 
     <%--ADD YOUR CONTENT HERE--%>

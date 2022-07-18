@@ -17,9 +17,10 @@
 
     <%--ADD YOUR CONTENT HERE--%>
 
-        <div class="card-block">
-
-            <form method="post" id="configureAccount" action=""   >
+        <div class="card mb-4">
+            <h5 class="card-header">Configure Accounts</h5>
+            <div class="card-body">
+                <form method="post" id="configureAccount" action=""   >
                 <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
                     Enter your account details here and submit the form
                 </div>
@@ -72,7 +73,7 @@
 
 
             </form>
-
+            </div>
         </div>
 
     <%--ADD YOUR CONTENT HERE--%>

@@ -17,62 +17,63 @@
 
     <%--ADD YOUR CONTENT HERE--%>
 
-    <div class="card-block">
-
-        <form method="post" id="availableTransactionsForm" action=""   >
-            <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
-                Available Transactions
-            </div>
-
-
-            <%--ADD YOUR CONTENT HERE--%>
+    <div class="card mb-4">
+        <h5 class="card-header">Configure Accounts</h5>
+        <div class="card-body">
+            <form method="post" id="availableTransactionsForm" action=""   >
+        <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
+            Available Transactions
+        </div>
 
 
-            <div class="dt-responsive table-responsive">
-                <table id="simpletable" class="table table-hover table-striped table-bordered nowrap">
-                    <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>ID NUMBER</th>
-                        <th>NAME</th>
-                        <th>PRN NO</th>
-                        <th>AMOUNT</th>
-                        <th>STATUS</th>
-                        <th>SERVICE</th>
-                        <th>ACTION</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <c:if test="${not empty transactions}">
-                        <c:forEach var="transaction" items="${transactions}" varStatus="counter">
-                            <tr>
-                                <td>${counter.count}.</td>
-                                <td>${transaction.idNumber}</td>
-                                <td>${transaction.name}</td>
-                                <td>${transaction.prnNumber}</td>
-                                <td>${transaction.prnAmount}</td>
-                                <td>${transaction.status}</td>
-                                <td>${transaction.serviceCode}</td>
-                                <td> <button type="button" class="icofont icofont-paper-plane text-success" >Pay</button> </td>
+        <%--ADD YOUR CONTENT HERE--%>
 
 
-                            </tr>
-                        </c:forEach>
-                    </c:if>
+        <div class="dt-responsive table-responsive">
+            <table id="simpletable" class="table table-hover table-striped table-bordered nowrap">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>ID NUMBER</th>
+                    <th>NAME</th>
+                    <th>PRN NO</th>
+                    <th>AMOUNT</th>
+                    <th>STATUS</th>
+                    <th>SERVICE</th>
+                    <th>ACTION</th>
+                </tr>
+                </thead>
+                <tbody>
 
-                    </tbody>
-                </table>
-            </div>
+                <c:if test="${not empty transactions}">
+                    <c:forEach var="transaction" items="${transactions}" varStatus="counter">
+                        <tr>
+                            <td>${counter.count}.</td>
+                            <td>${transaction.idNumber}</td>
+                            <td>${transaction.name}</td>
+                            <td>${transaction.prnNumber}</td>
+                            <td>${transaction.prnAmount}</td>
+                            <td>${transaction.status}</td>
+                            <td>${transaction.serviceCode}</td>
+                            <td> <button type="button" class="icofont icofont-paper-plane text-success" >Pay</button> </td>
+
+
+                        </tr>
+                    </c:forEach>
+                </c:if>
+
+                </tbody>
+            </table>
+        </div>
 
 
 
 
-            <%--ADD YOUR CONTENT HERE--%>
+        <%--ADD YOUR CONTENT HERE--%>
 
 
-        </form>
-
+    </form>
+        </div>
     </div>
 
     <%--ADD YOUR CONTENT HERE--%>

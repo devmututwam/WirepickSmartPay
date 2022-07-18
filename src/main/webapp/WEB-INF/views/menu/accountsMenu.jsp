@@ -23,6 +23,6 @@
             <a class="menu-link" href="<c:url value="/accounts/accountAmmendments" />">
                 <div data-i18n="Container">Amendments</div>
             </a>
-        </li>s
+        </li>
     </ul>
 </li>

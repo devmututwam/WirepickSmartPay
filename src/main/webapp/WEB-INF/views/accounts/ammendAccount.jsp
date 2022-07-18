@@ -17,62 +17,63 @@
 
     <%--ADD YOUR CONTENT HERE--%>
 
-    <div class="card-block">
+    <div class="card mb-4">
+        <h5 class="card-header">Amend Account</h5>
+        <div class="card-body">
+            <form method="post" id="ammendAccountForm" action=""   >
+        <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
+            Review your account details here and submit the form
+        </div>
 
-        <form method="post" id="ammendAccountForm" action=""   >
-            <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
-                Review your account details here and submit the form
-            </div>
 
+        <%--ADD YOUR CONTENT HERE--%>
 
-            <%--ADD YOUR CONTENT HERE--%>
-
-            <div class="row" id="ARL" style="display:block;">
-                <div class="col-sm-6 col-sm-6" style="float: left;">
-                    <br>
-                    <label> Account Name </label> <br>
-                    <input class="form-control" type="text"
-                           name="accountName" id="accountName" placeholder="name of account" value="${account.accountName}" required>
-                    <br>
-                    <label> Bank Name </label> <br>
-                    <input class="form-control" type="text"
-                           name="bankName" id="bankName" placeholder="Name of Bank" value="${account.bankName}" required>
-                    <br>
-                    <label> Branch Name </label> <br>
-                    <input class="form-control" type="text"
-                           name="branchName" id="branchName" placeholder="Name of branch" value="${account.branchName}" required>
-                    <br>
-
-                </div>
+        <div class="row" id="ARL" style="display:block;">
+            <div class="col-sm-6 col-sm-6" style="float: left;">
                 <br>
-                <div class="col-sm-6" style="float: right;">
-                    <label> Branch Code </label> <br>
-                    <input class="form-control" type="text"
-                           name="branchCode" id="branchCode" placeholder="branch code" value="${account.branchCode}" required>
-                    <br>
-                    <label> Account Number </label> <br>
-                    <input class="form-control" type="number"
-                           name="accountNumber" id="accountNumber" placeholder="Account Number" maxlength="13" min="0" value="${account.accountNumber}" required>
-                    <br>
-                    <label> TPIN </label> <br>
-                    <input class="form-control" type="number"
-                           name="tpin" id="tpin" placeholder="TPIN" maxlength="10" min="0" value="${account.idNumber}">
-                    <br>
-                    <br>
+                <label> Account Name </label> <br>
+                <input class="form-control" type="text"
+                       name="accountName" id="accountName" placeholder="name of account" value="${account.accountName}" required>
+                <br>
+                <label> Bank Name </label> <br>
+                <input class="form-control" type="text"
+                       name="bankName" id="bankName" placeholder="Name of Bank" value="${account.bankName}" required>
+                <br>
+                <label> Branch Name </label> <br>
+                <input class="form-control" type="text"
+                       name="branchName" id="branchName" placeholder="Name of branch" value="${account.branchName}" required>
+                <br>
 
-                    <div class="form-group text-right">
-                        <button type="button" id="submitAmmendedAccDetails" class="btn btn-success mr-3">
-                            <i class="icofont icofont-paper-plane"></i> Submit
-                        </button>
-                    </div>
+            </div>
+            <br>
+            <div class="col-sm-6" style="float: right;">
+                <label> Branch Code </label> <br>
+                <input class="form-control" type="text"
+                       name="branchCode" id="branchCode" placeholder="branch code" value="${account.branchCode}" required>
+                <br>
+                <label> Account Number </label> <br>
+                <input class="form-control" type="number"
+                       name="accountNumber" id="accountNumber" placeholder="Account Number" maxlength="13" min="0" value="${account.accountNumber}" required>
+                <br>
+                <label> TPIN </label> <br>
+                <input class="form-control" type="number"
+                       name="tpin" id="tpin" placeholder="TPIN" maxlength="10" min="0" value="${account.idNumber}">
+                <br>
+                <br>
+
+                <div class="form-group text-right">
+                    <button type="button" id="submitAmmendedAccDetails" class="btn btn-success mr-3">
+                        <i class="icofont icofont-paper-plane"></i> Submit
+                    </button>
                 </div>
             </div>
+        </div>
 
-            <%--ADD YOUR CONTENT HERE--%>
+        <%--ADD YOUR CONTENT HERE--%>
 
 
-        </form>
-
+    </form>
+        </div>
     </div>
 
     <%--ADD YOUR CONTENT HERE--%>

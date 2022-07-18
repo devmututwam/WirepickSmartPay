@@ -17,9 +17,10 @@
 
     <%--ADD YOUR CONTENT HERE--%>
 
-    <div class="card-block">
-
-        <form method="post" id="viewAccountsForm" action=""   >
+        <div class="card mb-4">
+            <h5 class="card-header">Configure Accounts</h5>
+            <div class="card-body">
+                <form method="post" id="viewAccountsForm" action=""   >
             <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
                 View your available accounts and choose which accounts to activate/deactivate
             </div>
@@ -76,8 +77,8 @@
 
 
         </form>
-
-    </div>
+            </div>
+        </div>
 
     <%--ADD YOUR CONTENT HERE--%>
 
