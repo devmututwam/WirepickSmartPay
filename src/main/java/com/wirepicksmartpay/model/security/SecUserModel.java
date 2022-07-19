@@ -16,6 +16,9 @@ public class SecUserModel {
     private String status;
     private Timestamp createdDate;
     private Timestamp modifiedDate;
+    private String role;
+    private String userType;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -106,6 +109,26 @@ public class SecUserModel {
 
     public void setModifiedDate(Timestamp modifiedDate) {
         this.modifiedDate = modifiedDate;
+    }
+
+    @Basic
+    @Column(name = "ROLE", nullable = true, length = 20)
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    @Basic
+    @Column(name = "USER_TYPE", nullable = true, length = 20)
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     @Override

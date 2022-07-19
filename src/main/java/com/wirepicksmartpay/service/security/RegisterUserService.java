@@ -47,6 +47,7 @@ public class RegisterUserService {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
+        String userType = request.getParameter("userType");
 
         if("".equalsIgnoreCase(username) || username == null){
             finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
@@ -66,6 +67,12 @@ public class RegisterUserService {
             return finalResponse;
         }
 
+        if("".equalsIgnoreCase(userType) || userType == null){
+            finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
+            finalResponse.put(ResponseConstants.MESSAGE, "user type field cannot be empty. Kindly select one");
+            return finalResponse;
+        }
+
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         //Create the User Object
@@ -77,6 +84,7 @@ public class RegisterUserService {
         userModel.setStatus(Status.ACTIVE.toString());
         userModel.setCreatedDate(timestamp);
         userModel.setModifiedDate(timestamp);
+        userModel.setUserType(userType);
 
         SecUserModel savedUser = secUserRepository.save(userModel);
 

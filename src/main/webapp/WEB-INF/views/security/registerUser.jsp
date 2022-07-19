@@ -127,6 +127,14 @@
                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="userType" class="form-label">User Type</label>
+                            <select class="form-control" name="userType" id="userType">
+                                <option value="0" selected>--------Individual/Company--------</option>
+                                <option value="INDIVIDUAL">INDIVIDUAL</option>
+                                <option value="COMPANY">COMPANY</option>
+                            </select>
+                        </div>
 
                         <div class="mb-3">
                             <div class="form-check">

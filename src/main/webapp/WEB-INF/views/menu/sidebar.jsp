@@ -150,6 +150,7 @@
                         <jsp:include page="darshBoardMenu.jsp"/>
                         <jsp:include page="userTransactionsMenu.jsp"/>
                         <jsp:include page="accountsMenu.jsp"/>
+                        <jsp:include page="securityMenu.jsp"/>
 
                 </li>
             </ul>

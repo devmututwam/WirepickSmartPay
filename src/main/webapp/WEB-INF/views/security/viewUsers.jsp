@@ -18,11 +18,11 @@
     <%--ADD YOUR CONTENT HERE--%>
 
         <div class="card mb-4">
-            <h5 class="card-header">Available accounts</h5>
+            <h5 class="card-header">Available Users</h5>
             <div class="card-body">
-                <form method="post" id="viewAccountsForm" action=""   >
+                <form method="post" id="viewUsersForm" action=""   >
             <div style="margin-left: 15px; margin-right: 15px;" class="alert alert-info">
-                View your available accounts and choose which accounts to activate/deactivate
+                View your available users and ..........
             </div>
 
 
@@ -33,36 +33,31 @@
                     <thead>
                     <tr>
                         <th>No.</th>
-                        <th>TPIN</th>
-                        <th>ACC NAME</th>
-                        <th>ACC NO</th>
-                        <th>BANK NAME</th>
-                        <th>BRANCH</th>
-                        <th>BALANCE</th>
+                        <th>USERNAME</th>
+                        <th>SYSTEM CODE</th>
+                        <th>EMAIL</th>
+                        <th>PHONE</th>
                         <th>STATUS</th>
-                        <th>ACTION</th>
+                        <%--<th>ACTION</th>--%>
                     </tr>
                     </thead>
                     <tbody>
 
-                    <c:if test="${not empty availableAccounts}">
-                        <c:forEach var="account" items="${availableAccounts}" varStatus="counter">
+                    <c:if test="${not empty availableUsers}">
+                        <c:forEach var="user" items="${availableUsers}" varStatus="counter">
                             <tr>
                                 <td>${counter.count}.</td>
-                                <td>${account.idNumber}</td>
-                                <td>${account.accountName}</td>
-                                <td>${account.accountNumber}</td>
-                                <td>${account.bankName}</td>
-                                <td>${account.branchName}</td>
-                                <td>${account.accountBalance}</td>
-                                    <%--<td>${account.status}</td>--%>
+                                <td>${user.username}</td>
+                                <td>${user.systemCode}</td>
+                                <td>${user.emailAddress}</td>
+                                <td>${user.phone}</td>
                                 <td>
-                                    <a class="text-info">${account.status}</a>
+                                    <a class="text-info">${user.status}</a>
                                 </td>
-                                <td><button type="button" id="actDeact" class="btn btn-success mr-3">
+                               <%-- <td><button type="button" id="actDeact" class="btn btn-success mr-3">
                                     <i class="icofont icofont-paper-plane"></i>
                                     <a href="accounts/actDeactAccount?accountNumber=${account.accountNumber}" class="text-purple">Activate/Deactivate</a>
-                                </button></td>
+                                </button></td>--%>
 
 
                             </tr>
@@ -93,5 +88,4 @@
 
 <%--Add your custom JS here--%>
 <script type="text/javascript" src="<c:url value="/assets/bower/sweetalert/js/sweetalert.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/assets/js/accounts/configureAccount.js"/>"></script>
 
