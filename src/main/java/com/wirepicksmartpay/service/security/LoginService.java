@@ -78,7 +78,7 @@ public class LoginService {
         else System.out.println("Password correct ");
 
         finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_SUCCESS);
-        finalResponse.put(ResponseConstants.MESSAGE, "Login successful ! User: " + userModel.getFirstName() + userModel.getLastName());
+        finalResponse.put(ResponseConstants.MESSAGE, "Login successful ! User: " + userModel.getUsername());
 
         return finalResponse;
     }
