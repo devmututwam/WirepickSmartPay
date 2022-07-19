@@ -3,7 +3,6 @@ package com.wirepicksmartpay.service.security;
 
 import com.wirepicksmartpay.helper.enums.ResponseConstants;
 import com.wirepicksmartpay.helper.enums.Status;
-import com.wirepicksmartpay.model.security.SecCustomerModel;
 import com.wirepicksmartpay.model.security.SecUserModel;
 import com.wirepicksmartpay.repository.security.SecCustomerRepostitory;
 import com.wirepicksmartpay.repository.security.SecUserRepository;
@@ -27,11 +26,15 @@ public class RegisterUserService {
     private Logger logger = Logger.getLogger(RegisterUserService.class);
     private final SecUserRepository secUserRepository;
     private final SecCustomerRepostitory secCustomerRepostitory;
+    private final PassBasedEnc passBasedEnc;
+    private final TrippleDes trippleDes;
 
     public RegisterUserService(SecUserRepository secUserRepository,
-                               SecCustomerRepostitory secCustomerRepostitory) {
+                               SecCustomerRepostitory secCustomerRepostitory, PassBasedEnc passBasedEnc, TrippleDes trippleDes) {
         this.secUserRepository = secUserRepository;
         this.secCustomerRepostitory = secCustomerRepostitory;
+        this.passBasedEnc = passBasedEnc;
+        this.trippleDes = trippleDes;
     }
 
 
@@ -75,11 +78,17 @@ public class RegisterUserService {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
+        //Create an encrypted password
+        String encryptedpassword = trippleDes.encrypt(password);
+
+        System.out.println("Plain text password = " + password);
+        System.out.println("Secure password = " + encryptedpassword);
+
         //Create the User Object
         SecUserModel userModel = new SecUserModel();
 
         userModel.setUsername(username);
-        userModel.setPassword(password);
+        userModel.setPassword(encryptedpassword);
         userModel.setEmailAddress(email);
         userModel.setStatus(Status.ACTIVE.toString());
         userModel.setCreatedDate(timestamp);

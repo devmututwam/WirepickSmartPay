@@ -26,11 +26,13 @@ public class CreateUserService {
     private Logger logger = Logger.getLogger(CreateUserService.class);
     private final SecUserRepository secUserRepository;
     private final SecCustomerRepostitory secCustomerRepostitory;
+    private final TrippleDes trippleDes;
 
     public CreateUserService(SecUserRepository secUserRepository,
-                             SecCustomerRepostitory secCustomerRepostitory) {
+                             SecCustomerRepostitory secCustomerRepostitory, TrippleDes trippleDes) {
         this.secUserRepository = secUserRepository;
         this.secCustomerRepostitory = secCustomerRepostitory;
+        this.trippleDes = trippleDes;
     }
 
 
@@ -89,11 +91,19 @@ public class CreateUserService {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
+        String password = "wirepick123";
+
+        //Create an encrypted password
+        String encryptedpassword = trippleDes.encrypt(password);
+
+        System.out.println("Plain text password = " + password);
+        System.out.println("Secure password = " + encryptedpassword);
+
         //Create the User Object
         SecUserModel userModel = new SecUserModel();
 
         userModel.setUsername(username);
-        userModel.setPassword("wirepick123");
+        userModel.setPassword(encryptedpassword);
         userModel.setEmailAddress(emailAddress);
         userModel.setStatus(Status.ACTIVE.toString());
         userModel.setCreatedDate(timestamp);

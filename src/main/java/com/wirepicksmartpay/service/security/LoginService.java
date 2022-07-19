@@ -1,7 +1,6 @@
 package com.wirepicksmartpay.service.security;
 
 import com.wirepicksmartpay.helper.enums.ResponseConstants;
-import com.wirepicksmartpay.model.security.SecCustomerModel;
 import com.wirepicksmartpay.model.security.SecUserModel;
 import com.wirepicksmartpay.repository.security.SecCustomerRepostitory;
 import com.wirepicksmartpay.repository.security.SecUserRepository;
@@ -23,11 +22,15 @@ public class LoginService {
     private Logger logger = Logger.getLogger(LoginService.class);
     private final SecUserRepository secUserRepository;
     private final SecCustomerRepostitory secCustomerRepostitory;
+    private final PassBasedEnc passBasedEnc;
+    private final TrippleDes trippleDes;
 
     public LoginService(SecUserRepository secUserRepository,
-                        SecCustomerRepostitory secCustomerRepostitory) {
+                        SecCustomerRepostitory secCustomerRepostitory, PassBasedEnc passBasedEnc, TrippleDes trippleDes) {
         this.secUserRepository = secUserRepository;
         this.secCustomerRepostitory = secCustomerRepostitory;
+        this.passBasedEnc = passBasedEnc;
+        this.trippleDes = trippleDes;
     }
 
     /**
@@ -63,16 +66,19 @@ public class LoginService {
         }
 
         //Validate the password
-        if(!userModel.getPassword().equalsIgnoreCase(password)){
+        String descriptedPsd = trippleDes.decrypt(userModel.getPassword());
+
+        /* verify the decrypted password and password entered match */
+        if(!descriptedPsd.equalsIgnoreCase(password)){
+            System.out.println("Incorrect password entered!!");
             finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
             finalResponse.put(ResponseConstants.MESSAGE, "Invalid password entered");
             return finalResponse;
         }
-
-        SecCustomerModel customerModel = secCustomerRepostitory.findByUserId(userModel.getId());
+        else System.out.println("Password correct ");
 
         finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_SUCCESS);
-        finalResponse.put(ResponseConstants.MESSAGE, "Login successful ! User: " + customerModel.getCustomerName());
+        finalResponse.put(ResponseConstants.MESSAGE, "Login successful ! User: " + userModel.getFirstName() + userModel.getLastName());
 
         return finalResponse;
     }
