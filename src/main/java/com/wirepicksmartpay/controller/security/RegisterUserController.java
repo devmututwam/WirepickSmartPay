@@ -59,7 +59,7 @@ public class RegisterUserController {
         } catch (Exception e) {
             logger.error(e.getMessage(), e.getCause());
             finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
-            finalResponse.put(ResponseConstants.MESSAGE, "Error!! Failed to authenticate user " + e.getMessage());
+            finalResponse.put(ResponseConstants.MESSAGE, "Error!! Failed to register user " + e.getMessage());
             return finalResponse;
         }
 

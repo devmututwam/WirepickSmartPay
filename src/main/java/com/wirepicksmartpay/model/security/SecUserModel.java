@@ -18,6 +18,8 @@ public class SecUserModel {
     private Timestamp modifiedDate;
     private String role;
     private String userType;
+    private String firstName;
+    private String lastName;
 
 
     @Id
@@ -112,7 +114,7 @@ public class SecUserModel {
     }
 
     @Basic
-    @Column(name = "ROLE", nullable = true, length = 20)
+    @Column(name = "ROLE", nullable = true, length = 45)
     public String getRole() {
         return role;
     }
@@ -122,7 +124,7 @@ public class SecUserModel {
     }
 
     @Basic
-    @Column(name = "USER_TYPE", nullable = true, length = 20)
+    @Column(name = "USER_TYPE", nullable = true, length = 45)
     public String getUserType() {
         return userType;
     }
@@ -130,6 +132,18 @@ public class SecUserModel {
     public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    @Basic
+    @Column(name = "FIRST_NAME", nullable = true, length = 100)
+    public String getFirstName() {return firstName;}
+
+    public void setFirstName(String firstName) {this.firstName = firstName;}
+
+    @Basic
+    @Column(name = "LAST_NAME", nullable = true, length = 100)
+    public String getLastName() {return lastName;}
+    public void setLastName(String lastName) {this.lastName = lastName;}
+
 
     @Override
     public boolean equals(Object o) {

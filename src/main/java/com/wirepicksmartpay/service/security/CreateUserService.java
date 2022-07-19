@@ -3,7 +3,6 @@ package com.wirepicksmartpay.service.security;
 
 import com.wirepicksmartpay.helper.enums.ResponseConstants;
 import com.wirepicksmartpay.helper.enums.Status;
-import com.wirepicksmartpay.model.security.SecCustomerModel;
 import com.wirepicksmartpay.model.security.SecUserModel;
 import com.wirepicksmartpay.repository.security.SecCustomerRepostitory;
 import com.wirepicksmartpay.repository.security.SecUserRepository;
@@ -22,14 +21,14 @@ import java.util.Map;
  * @Author MututwaM
  */
 @Service
-public class RegisterUserService {
+public class CreateUserService {
 
-    private Logger logger = Logger.getLogger(RegisterUserService.class);
+    private Logger logger = Logger.getLogger(CreateUserService.class);
     private final SecUserRepository secUserRepository;
     private final SecCustomerRepostitory secCustomerRepostitory;
 
-    public RegisterUserService(SecUserRepository secUserRepository,
-                               SecCustomerRepostitory secCustomerRepostitory) {
+    public CreateUserService(SecUserRepository secUserRepository,
+                             SecCustomerRepostitory secCustomerRepostitory) {
         this.secUserRepository = secUserRepository;
         this.secCustomerRepostitory = secCustomerRepostitory;
     }
@@ -40,14 +39,16 @@ public class RegisterUserService {
      * @param request
      * @return
      */
-    public Map<String, Object> registerUser(HttpServletRequest request){
+    public Map<String, Object> createUser(HttpServletRequest request){
 
         Map<String, Object> finalResponse = new HashMap<>();
 
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String email = request.getParameter("email");
+        String emailAddress = request.getParameter("emailAddress");
         String userType = request.getParameter("userType");
+        String role = request.getParameter("role");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
 
         if("".equalsIgnoreCase(username) || username == null){
             finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
@@ -55,13 +56,8 @@ public class RegisterUserService {
             return finalResponse;
         }
 
-        if("".equalsIgnoreCase(password) || password == null){
-            finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
-            finalResponse.put(ResponseConstants.MESSAGE, "password field cannot be empty. Kindly enter your password");
-            return finalResponse;
-        }
 
-        if("".equalsIgnoreCase(email) || email == null){
+        if("".equalsIgnoreCase(emailAddress) || emailAddress == null){
             finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
             finalResponse.put(ResponseConstants.MESSAGE, "email field cannot be empty. Kindly enter your email");
             return finalResponse;
@@ -73,31 +69,41 @@ public class RegisterUserService {
             return finalResponse;
         }
 
+        if("".equalsIgnoreCase(role) || role == null){
+            finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
+            finalResponse.put(ResponseConstants.MESSAGE, "role field cannot be empty. Kindly select one");
+            return finalResponse;
+        }
+
+        if("".equalsIgnoreCase(firstName) || firstName == null){
+            finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
+            finalResponse.put(ResponseConstants.MESSAGE, "first name field cannot be empty. Kindly enter first name");
+            return finalResponse;
+        }
+
+        if("".equalsIgnoreCase(lastName) || lastName == null){
+            finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_ERROR);
+            finalResponse.put(ResponseConstants.MESSAGE, "last name field cannot be empty. Kindly enter last name");
+            return finalResponse;
+        }
+
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
         //Create the User Object
         SecUserModel userModel = new SecUserModel();
 
         userModel.setUsername(username);
-        userModel.setPassword(password);
-        userModel.setEmailAddress(email);
+        userModel.setPassword("wirepick123");
+        userModel.setEmailAddress(emailAddress);
         userModel.setStatus(Status.ACTIVE.toString());
         userModel.setCreatedDate(timestamp);
         userModel.setModifiedDate(timestamp);
         userModel.setUserType(userType);
+        userModel.setRole(role);
+        userModel.setFirstName(firstName);
+        userModel.setLastName(lastName);
 
         SecUserModel savedUser = secUserRepository.save(userModel);
-
-        //Create the template customer object here
-        /*SecCustomerModel customerModel = new SecCustomerModel();
-
-        customerModel.setUserId(savedUser.getId());
-        customerModel.setCreatedBy(54);
-        customerModel.setCreatedDate(timestamp);
-        customerModel.setModifiedDate(timestamp);
-        customerModel.setStatus(Status.ACTIVE.toString());
-
-        secCustomerRepostitory.save(customerModel);*/
 
 
         /***Get the application date and time***/
@@ -109,7 +115,7 @@ public class RegisterUserService {
         finalResponse.put(ResponseConstants.STATUS, ResponseConstants.STATUS_SUCCESS);
         finalResponse.put(ResponseConstants.MESSAGE, "User created successfully with the following details: ");
         finalResponse.put("username", username);
-        finalResponse.put("email", email);
+        finalResponse.put("email", emailAddress);
         finalResponse.put("effectiveDate", effectiveDate);
 
         return finalResponse;

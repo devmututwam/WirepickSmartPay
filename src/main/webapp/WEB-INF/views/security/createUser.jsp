@@ -33,15 +33,19 @@
                         <br>
                         <label> Username </label> <br>
                         <input class="form-control" type="text"
-                               name="username" id="username" placeholder="username" required>
+                               name="username" id="username" placeholder="username">
                         <br>
-                        <label> Name </label> <br>
+                        <label> First Name </label> <br>
                         <input class="form-control" type="text"
-                               name="customerName" id="customerName" placeholder="Full name" required>
+                               name="firstName" id="firstName" placeholder="Fist name">
+                        <br>
+                        <label> Last Name </label> <br>
+                        <input class="form-control" type="text"
+                               name="lastName" id="lastName" placeholder="Last name">
                         <br>
                         <label> Email </label> <br>
                         <input class="form-control" type="email"
-                               name="emailAddress" id="emailAddress" placeholder="email" required>
+                               name="emailAddress" id="emailAddress" placeholder="email">
                         <br>
 
                     </div>
@@ -56,7 +60,7 @@
                         <br>
                         <label> Phone </label> <br>
                         <input class="form-control" type="text"
-                               name="phone" id="phone" placeholder="phone number">
+                               name="phone" id="phone" placeholder="phone number: 09xxxxxxxx">
                         <br>
                         <label for="userType" class="form-label">User Type</label>
                         <select class="form-control" name="userType" id="userType">
@@ -67,7 +71,7 @@
                         <br>
 
                         <div class="form-group text-right">
-                            <button type="button" id="submitAccDetails" class="btn btn-success mr-3">
+                            <button type="button" id="createUserBtn" class="btn btn-success mr-3">
                                 <i class="icofont icofont-paper-plane"></i> Submit
                             </button>
                         </div>
@@ -94,4 +98,4 @@
 
 <%--Add your custom JS here--%>
 <script type="text/javascript" src="<c:url value="/assets/bower/sweetalert/js/sweetalert.min.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/assets/js/accounts/configureAccount.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/js/security/createUser.js"/>"></script>
